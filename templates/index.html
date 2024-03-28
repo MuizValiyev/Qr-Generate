@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор QR-кода</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Генератор QR-кода</h1>
+        <form action="/generate" method="post">
+            <div class="box">
+                <label for="data">Введите URL</label>
+                <input type="text" id="data" name="data" placeholder="Введите текст или URL - адрес">
+            </div>
+            <button type="submit">Сгенерировать QR-код</button>
+        </form>
+    </div>
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        ul,
+        ol,
+        li {
+            list-style: none;
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: inherit;
+            font-weight: inherit;
+        }
+
+        html,
+        body {
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            background-color: rgb(209, 202, 211);
+        }
+
+        body {
+            background-color: #2a2a2a;
+        }
+
+        .container {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            padding: 20;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 20px;
+            margin-top: 20px;
+            font-family: "Space Mono", monospace;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        label {
+            color: #fff;
+            font-family: "Space Mono", monospace;
+        }
+
+        input {
+            background-color: #3a3a3a;
+            color: #fff;
+            width: 1000px;
+            height: 40px;
+            outline: none;
+            padding: 20px;
+            font-family: "Space Mono", monospace;
+        }
+
+        button {
+            width: 300px;
+            height: 50px;
+            background-color: #3a3a3a;
+            color: #fff;
+            font-family: "Space Mono", monospace;
+            font-size: 20px;
+            margin-left: 400px;
+            margin-top: 50px;
+            cursor: pointer;
+        }
+    </style>
+</body>
+
+</html>
