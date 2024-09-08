@@ -1,0 +1,15 @@
+services:
+  web:
+    build: .
+    container_name: qrcode-web
+    restart: always
+    command: bash entrypoint.sh
+    volumes:
+      - .:/app
+      - ./static:/usr/local/qrcode/static
+      - ./media:/usr/local/qrcode/media
+    ports:
+      - 8002:8002
+    environment:
+      - DEBUG=0
+      - DJANGO_ALLOWED_HOSTS=qrcode.muizi.uz localhost 127.0.0.1 [::1] 176.221.28.176

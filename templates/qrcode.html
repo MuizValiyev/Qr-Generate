@@ -9,11 +9,16 @@
 
 <body>
     <div class="container">
-        <h1>Ваш Qr-code готов!</h1>
-        <div>
-            <img src="{{ qrcode.svg_data_uri(dark='white', scale=10) }}">
+        <h1>Here is yours QR code</h1>
+        <div class="block">
+            <img src="{{ qrcode.svg_data_uri(dark='white', scale=10) }}" alt="QR Code">
+    
+            <a id="downloadLink" href="" download="qrcode.png">
+                <button>Download QR code</button>
+            </a>
+            <img style="display: none;" id="qrImage" src="{{ qrcode.svg_data_uri(dark='black', scale=10) }}" alt="QR Code">
         </div>
-        <p><a href="/">Вернуться к генератору QR-кода</a></p>
+        <p><a href="/">Back to generator</a></p>
     </div>
     <style>
 *,
@@ -81,7 +86,37 @@
             font-size: 20px;
             font-family: "Space Mono", monospace;    
         }
+        .block{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #downloadLink button{
+            width: 200px;
+            height: 50px;
+            border-radius: 5px;
+            background-color: #3a3a3a;
+            color: #fff;
+            font-family: "Space Mono", monospace;
+            font-size: 15px;
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
     </style>
+
+    <script>
+        const downloadLink = document.getElementById('downloadLink');
+        const qrImage = document.getElementById('qrImage');
+
+        window.onload = function() {
+            downloadLink.href = qrImage.src;
+        };
+
+    </script>
 </body>
 
 </html>
