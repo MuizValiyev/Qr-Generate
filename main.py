@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import segno
 
 app = Flask(__name__)
+app.debug = True
 
 @app.route('/')
 def index():
@@ -14,4 +15,4 @@ def generate_qr():
     return render_template('qrcode.html', qrcode=qr)
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)

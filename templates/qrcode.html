@@ -12,16 +12,19 @@
         <h1>Here is yours QR code</h1>
         <div class="block">
             <img src="{{ qrcode.svg_data_uri(dark='white', scale=10) }}" alt="QR Code">
-    
+
             <a id="downloadLink" href="" download="qrcode.png">
                 <button>Download QR code</button>
             </a>
-            <img style="display: none;" id="qrImage" src="{{ qrcode.svg_data_uri(dark='black', scale=10) }}" alt="QR Code">
+            <img style="display: none;" id="qrImage" src="{{ qrcode.svg_data_uri(dark='black', scale=10) }}"
+                alt="QR Code">
         </div>
         <p><a href="/">Back to generator</a></p>
     </div>
     <style>
-*,
+        @import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap');
+
+        *,
         *::before,
         *::after {
             margin: 0;
@@ -58,7 +61,9 @@
         html,
         body {
             height: 100%;
-            font-family: 'Poppins', sans-serif;
+            font-family: "ADLaM Display", system-ui;
+            font-weight: 900;
+            font-style: normal;
             background-color: rgb(209, 202, 211);
         }
 
@@ -79,27 +84,34 @@
             color: #fff;
             font-size: 20px;
             margin-top: 20px;
-            font-family: "Space Mono", monospace;
+            font-family: "ADLaM Display", system-ui;
+            font-weight: 900;
+            font-style: normal;
         }
-        a{
+        a {
             color: #fff;
             font-size: 20px;
-            font-family: "Space Mono", monospace;    
+            font-family: "ADLaM Display", system-ui;
+            font-weight: 900;
+            font-style: normal;
         }
-        .block{
+
+        .block {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
 
-        #downloadLink button{
+        #downloadLink button {
             width: 200px;
             height: 50px;
             border-radius: 5px;
             background-color: #3a3a3a;
             color: #fff;
-            font-family: "Space Mono", monospace;
+            font-family: "ADLaM Display", system-ui;
+            font-weight: 900;
+            font-style: normal;
             font-size: 15px;
             cursor: pointer;
             justify-content: center;
@@ -112,7 +124,7 @@
         const downloadLink = document.getElementById('downloadLink');
         const qrImage = document.getElementById('qrImage');
 
-        window.onload = function() {
+        window.onload = function () {
             downloadLink.href = qrImage.src;
         };
 
